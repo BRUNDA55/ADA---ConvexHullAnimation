@@ -1,0 +1,18 @@
+.center {
+    text-align: center;
+}
+
+#canvas {
+    max-width: 800px;
+    margin: auto;
+    border: thick dotted black;
+}
+
+#pause {
+    height:30px;
+    width:30px;
+}
+
+table {
+    margin: auto;
+}

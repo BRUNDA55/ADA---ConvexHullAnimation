@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="two.js"></script>
+        <script type="text/javascript" src="quickhull.js"></script>
+        <script type="text/javascript" src="graph.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <h1>Convex Hull Algorithm</h1>
+            <h3>Animating the computation of convex hulls in two dimensions</h4>
+        </header>
+        
+        <p>
+            Computing the convex hull of a set of points is a fundamental problem in the field of computational geometry.
+            For those unaware of what a convex hull is: in 2D, imagine snapping an elastic band around a set of points - 
+            the convex hull is the set of points that form the perimeter created by the elastic band. For more information,
+            check <a href="https://en.wikipedia.org/wiki/Convex_hull">this</a> Wikipedia article out.
+        </p>
+        
+        <p>
+            
+            <ul>
+                <p><a href="https://en.wikipedia.org/wiki/Quickhull" target="_blank">Quick hull</a></p>
+                <li>Best case - O(n log n) </li>
+                <li>Worst Case - O(n^2)</li>
+            </ul>
+            Where <i>n</i> is the number of vertices in the input and <i>h</i> is the number of vertices in the convex hull of the input.
+        <p>
+    
+        <table>
+            <tr>
+                <td>
+                    <div id="canvas"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="center">
+                    Enter number of vertices:
+                    <input type="number" id="num_vertices" name="vertices" min="1" max="1000">
+                    <button id="add_vertices" name="add_vertices" onclick="createVertices()"> Create </button>
+                </td>
+            </tr>
+            <tr>
+                <td class="center">
+                    Algorithm:
+                    <select id="algorithm">
+                        <!-- <option value="gift_wrap">Gift Wrapping</option> -->
+                        <!-- <option value="graham_scan">Graham Scan</option> -->
+                        <option value="quick_hull">Quick Hull</option>
+                    </select>
+                    <button id="execute" name="execute" onclick="execute()"> Execute </button>
+                    <button id="pause" name="pause" onclick="pause()" disabled="true">❚❚</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="center">
+                    Execution Speed:
+                    <div id="slidecontainer">
+                        <input type="range" min="1" max="100" value="12" class="slider" id="speed">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
